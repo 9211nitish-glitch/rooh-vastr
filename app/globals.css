@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --burgundy: #6D1835;
+  --burgundy-dark: #4F1026;
+  --burgundy-light: #8E2347;
+  --ivory: #FAF7F2;
+  --ivory-light: #FDFBF8;
+  --charcoal: #242124;
+  --muted-rose: #C98F9F;
+  --soft-beige: #EAE0D5;
+  --soft-beige-dark: #D4C4B5;
+  --white: #FFFFFF;
+}
+
+@theme {
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-dark: var(--burgundy-dark);
+  --color-burgundy-light: var(--burgundy-light);
+  --color-ivory: var(--ivory);
+  --color-ivory-light: var(--ivory-light);
+  --color-charcoal: var(--charcoal);
+  --color-muted-rose: var(--muted-rose);
+  --color-soft-beige: var(--soft-beige);
+  --color-soft-beige-dark: var(--soft-beige-dark);
+
+  --font-serif: var(--font-playfair), "Times New Roman", serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar for Luxury Experience */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C98F9F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6D1835;
+}
+
+/* Luxury button & card micro-interactions */
+.luxury-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(109, 24, 53, 0.08);
+}
