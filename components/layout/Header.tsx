@@ -112,7 +112,7 @@ export default function Header() {
                 <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-[#6D1835] group-hover:text-[#4F1026] transition-colors leading-none">
                   ROOH VASTR
                 </span>
-                <span className="text-[7.5px] sm:text-[9px] uppercase tracking-[0.16em] sm:tracking-[0.22em] text-[#C98F9F] font-semibold mt-0.5 sm:mt-1 truncate max-w-[190px] sm:max-w-none">
+                <span className="text-[7.5px] sm:text-[9px] uppercase tracking-[0.16em] sm:tracking-[0.22em] text-[#7A2843] font-bold mt-0.5 sm:mt-1 truncate max-w-[190px] sm:max-w-none">
                   Wear Your Story, Gift Your Feelings
                 </span>
               </div>

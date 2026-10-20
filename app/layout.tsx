@@ -45,6 +45,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${jakarta.variable} h-full antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link
+          rel="preload"
+          as="image"
+          href="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+          fetchPriority="high"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-[#FAF7F2] text-[#242124] selection:bg-[#C98F9F]/30 selection:text-[#4F1026] overflow-x-hidden">
         <CartProvider>
           <WishlistProvider>

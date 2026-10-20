@@ -25,7 +25,7 @@ export default function CustomerReviewsSection({ reviews }: CustomerReviewsSecti
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#242124]">
             What Our Customers Say
           </h2>
-          <p className="text-xs text-gray-500 mt-1">Real stories. Real smiles.</p>
+          <p className="text-xs text-stone-600 font-medium mt-1">Real stories. Real smiles.</p>
         </div>
         <Link
           href="#reviews"
@@ -60,7 +60,7 @@ export default function CustomerReviewsSection({ reviews }: CustomerReviewsSecti
               </p>
 
               <div>
-                <h4 className="text-xs font-bold text-[#242124]">{rev.customer_name}</h4>
+                <h3 className="text-xs font-bold text-[#242124]">{rev.customer_name}</h3>
                 <div className="flex items-center gap-0.5 mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star

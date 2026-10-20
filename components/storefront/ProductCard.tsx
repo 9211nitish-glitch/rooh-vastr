@@ -79,7 +79,7 @@ export default function ProductCard({ product, showAddToCart = true }: ProductCa
               <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
             </div>
             <span className="text-[11px] font-semibold text-stone-700">4.8</span>
-            <span className="text-[10px] text-stone-400">(120)</span>
+            <span className="text-[10px] text-stone-600 font-medium">(120)</span>
           </div>
 
           {/* Price & Discount Row */}
@@ -88,12 +88,12 @@ export default function ProductCard({ product, showAddToCart = true }: ProductCa
               {formatPrice(price)}
             </span>
             {regularPrice > price && (
-              <span className="text-xs text-stone-400 line-through">
+              <span className="text-xs text-stone-600 line-through">
                 {formatPrice(regularPrice)}
               </span>
             )}
             {discountPercent && (
-              <span className="px-1.5 py-0.5 rounded bg-[#FFF2E6] text-[#C05A18] text-[10px] font-bold">
+              <span className="px-1.5 py-0.5 rounded bg-[#FFF0E6] text-[#8C3204] text-[10px] font-bold">
                 {discountPercent}% OFF
               </span>
             )}

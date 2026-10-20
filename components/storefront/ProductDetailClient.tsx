@@ -399,10 +399,10 @@ export default function ProductDetailClient({
               <span className="font-serif text-3xl font-bold text-[#242124]">
                 {formatPrice(price)}
               </span>
-              <span className="text-base text-gray-400 line-through">
+              <span className="text-base text-stone-600 line-through">
                 {formatPrice(regularPrice)}
               </span>
-              <span className="px-2 py-0.5 rounded bg-[#FFF2E6] text-[#C05A18] text-xs font-bold">
+              <span className="px-2 py-0.5 rounded bg-[#FFF0E6] text-[#8C3204] text-xs font-bold">
                 {discountPercent}% OFF
               </span>
             </div>

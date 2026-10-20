@@ -18,7 +18,7 @@ export default function BlogSection({ blogs }: BlogSectionProps) {
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#242124]">
             Latest from Our Blog
           </h2>
-          <p className="text-xs text-gray-500 mt-1">Gift ideas, inspiration and more.</p>
+          <p className="text-xs text-stone-600 font-medium mt-1">Gift ideas, inspiration and more.</p>
         </div>
         <Link
           href="/blog"
@@ -58,7 +58,7 @@ export default function BlogSection({ blogs }: BlogSectionProps) {
                 </h3>
               </div>
 
-              <div className="text-[11px] text-gray-400 font-medium pt-2 border-t border-gray-100 flex items-center justify-between">
+              <div className="text-[11px] text-stone-600 font-medium pt-2 border-t border-gray-100 flex items-center justify-between">
                 <span>{blog.date}</span>
                 <span>•</span>
                 <span>{blog.readTime}</span>

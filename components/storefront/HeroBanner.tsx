@@ -76,7 +76,7 @@ export default function HeroBanner() {
                 </div>
                 <div>
                   <span className="text-[11px] sm:text-xs font-semibold text-[#2D2424] block leading-tight">Premium Quality</span>
-                  <span className="text-[9px] sm:text-[10px] text-stone-500">Products</span>
+                  <span className="text-[9px] sm:text-[10px] text-stone-700 font-medium">Products</span>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@ export default function HeroBanner() {
                 </div>
                 <div>
                   <span className="text-[11px] sm:text-xs font-semibold text-[#2D2424] block leading-tight">Personalized</span>
-                  <span className="text-[9px] sm:text-[10px] text-stone-500">Just for You</span>
+                  <span className="text-[9px] sm:text-[10px] text-stone-700 font-medium">Just for You</span>
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ export default function HeroBanner() {
                 </div>
                 <div>
                   <span className="text-[11px] sm:text-xs font-semibold text-[#2D2424] block leading-tight">Fast &amp; Safe</span>
-                  <span className="text-[9px] sm:text-[10px] text-stone-500">Delivery</span>
+                  <span className="text-[9px] sm:text-[10px] text-stone-700 font-medium">Delivery</span>
                 </div>
               </div>
             </div>
@@ -114,6 +114,8 @@ export default function HeroBanner() {
                       <img
                         src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
                         alt="Good Things Take Time Custom T-Shirt"
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-xs rounded-xl p-2.5 text-center shadow-xs">
@@ -132,7 +134,7 @@ export default function HeroBanner() {
                       />
                       <div>
                         <span className="text-xs font-bold text-[#2D2424] block">Wooden Keychain Pair</span>
-                        <span className="text-[10px] text-stone-500">Better Together ♡</span>
+                        <span className="text-[10px] text-stone-700 font-medium">Better Together ♡</span>
                       </div>
                     </div>
                   </div>
@@ -179,25 +181,29 @@ export default function HeroBanner() {
                 </div>
                 <div>
                   <span className="text-xs font-bold text-stone-900 block">AI Gift Assistant</span>
-                  <span className="text-[10px] text-stone-500">Pick the perfect gift in 30s</span>
+                  <span className="text-[10px] text-stone-700 font-medium">Pick the perfect gift in 30s</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Carousel Bottom Dots */}
-        <div className="flex items-center justify-center gap-2 pt-10">
+        {/* Carousel Bottom Dots with WCAG AA compliant touch targets (min 44x44px) */}
+        <div className="flex items-center justify-center gap-1 pt-8 sm:pt-10">
           {[0, 1, 2].map((idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => setCurrentSlide(idx)}
-              className={`transition-all rounded-full ${
-                currentSlide === idx ? "w-6 h-2 bg-[#6D1835]" : "w-2 h-2 bg-stone-300 hover:bg-stone-400"
-              }`}
+              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
               aria-label={`Go to slide ${idx + 1}`}
-            />
+            >
+              <span
+                className={`transition-all rounded-full block ${
+                  currentSlide === idx ? "w-6 h-2 bg-[#6D1835]" : "w-2.5 h-2.5 bg-stone-400 hover:bg-stone-600"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

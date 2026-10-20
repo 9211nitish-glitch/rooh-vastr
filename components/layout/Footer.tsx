@@ -27,27 +27,27 @@ export default function Footer() {
                   <div className="font-serif text-2xl font-bold tracking-wider text-[#5B132B]">
                     ROOH VASTR
                   </div>
-                  <div className="text-[10px] tracking-widest text-gray-500 font-sans mt-0.5">
+                  <div className="text-[10px] tracking-widest text-stone-700 font-sans mt-0.5 font-medium">
                     Wear Your Story, Gift Your Feelings.
                   </div>
                 </div>
               </Link>
 
-              <p className="text-xs text-gray-600 max-w-sm leading-relaxed">
+              <p className="text-xs text-stone-700 max-w-sm leading-relaxed">
                 Premium personalized gifts and custom merchandise for every occasion. Made with love, just for you.
               </p>
 
-              <div className="pt-2 text-[11px] text-gray-500">
+              <div className="pt-2 text-[11px] text-stone-700 font-medium">
                 © 2026 Rooh Vastr. All rights reserved.
               </div>
             </div>
 
             {/* Col 2: Quick Links (2 cols) */}
             <div className="lg:col-span-2">
-              <h4 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
+              <h3 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
                 Quick Links
-              </h4>
-              <ul className="space-y-2 text-xs text-gray-600">
+              </h3>
+              <ul className="space-y-2 text-xs text-stone-700 font-medium">
                 <li>
                   <Link href="/shop" className="hover:text-[#5B132B] transition-colors">
                     Shop All
@@ -78,10 +78,10 @@ export default function Footer() {
 
             {/* Col 3: Customer Care (2 cols) */}
             <div className="lg:col-span-2">
-              <h4 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
+              <h3 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
                 Customer Care
-              </h4>
-              <ul className="space-y-2 text-xs text-gray-600">
+              </h3>
+              <ul className="space-y-2 text-xs text-stone-700 font-medium">
                 <li>
                   <Link href="/contact" className="hover:text-[#5B132B] transition-colors">
                     Contact Us
@@ -117,10 +117,10 @@ export default function Footer() {
 
             {/* Col 4: Contact Us (2 cols) */}
             <div className="lg:col-span-2">
-              <h4 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
+              <h3 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
                 Contact Us
-              </h4>
-              <ul className="space-y-2.5 text-xs text-gray-600">
+              </h3>
+              <ul className="space-y-2.5 text-xs text-stone-700 font-medium">
                 <li className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-[#5B132B] shrink-0" />
                   <span>+91 96548 61504</span>
@@ -138,9 +138,9 @@ export default function Footer() {
 
             {/* Col 5: We Accept Payment Methods (2 cols) */}
             <div className="lg:col-span-2">
-              <h4 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
+              <h3 className="font-serif text-xs font-bold uppercase tracking-wider text-[#242124] mb-3.5">
                 We Accept
-              </h4>
+              </h3>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="px-2 py-1 rounded bg-white border border-[#E0D5CC] text-[10px] font-bold text-gray-700 shadow-2xs">
                   UPI
@@ -159,7 +159,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar: Sitemap & Compliance */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 gap-3">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-700 font-medium gap-3">
             <p>© 2026 Rooh Vastr. All rights reserved.</p>
             <div className="flex items-center gap-4">
               <Link href="/sitemap" className="hover:text-[#5B132B] transition-colors">

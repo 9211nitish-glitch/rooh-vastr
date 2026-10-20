@@ -45,7 +45,7 @@ export default function BestsellingProductsSection({ products }: BestsellingProd
               className={`pb-1 transition-all cursor-pointer ${
                 activeTab === "bestsellers"
                   ? "text-[#5B132B] border-b-2 border-[#5B132B] font-bold"
-                  : "text-gray-500 hover:text-gray-900"
+                  : "text-stone-600 hover:text-[#5B132B] font-medium"
               }`}
             >
               Best Sellers
@@ -56,7 +56,7 @@ export default function BestsellingProductsSection({ products }: BestsellingProd
               className={`pb-1 transition-all cursor-pointer ${
                 activeTab === "new"
                   ? "text-[#5B132B] border-b-2 border-[#5B132B] font-bold"
-                  : "text-gray-500 hover:text-gray-900"
+                  : "text-stone-600 hover:text-[#5B132B] font-medium"
               }`}
             >
               New Arrivals
@@ -67,7 +67,7 @@ export default function BestsellingProductsSection({ products }: BestsellingProd
               className={`pb-1 transition-all cursor-pointer ${
                 activeTab === "sale"
                   ? "text-[#5B132B] border-b-2 border-[#5B132B] font-bold"
-                  : "text-gray-500 hover:text-gray-900"
+                  : "text-stone-600 hover:text-[#5B132B] font-medium"
               }`}
             >
               On Sale
