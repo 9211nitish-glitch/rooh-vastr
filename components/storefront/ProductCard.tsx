@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
 import { Star, Heart, ShoppingBag } from "lucide-react";
@@ -36,10 +37,13 @@ export default function ProductCard({ product, showAddToCart = true }: ProductCa
       <Link href={`/product/${product.slug}`} className="block">
         {/* Product Image & Badges */}
         <div className="aspect-square sm:aspect-4/5 rounded-xl overflow-hidden bg-[#FAF7F2] relative">
-          <img
+          <Image
             src={product.primary_image || product.images?.[0]?.image_url || "/placeholder.jpg"}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            loading="lazy"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
 
           {/* Top-Left Bestseller Badge */}

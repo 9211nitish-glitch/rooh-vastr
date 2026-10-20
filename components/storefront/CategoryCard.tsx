@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Category } from "@/lib/types";
 import { LayoutGrid } from "lucide-react";
 
@@ -24,11 +25,16 @@ export default function CategoryCard({ category }: CategoryCardProps) {
             <LayoutGrid className="w-8 h-8 sm:w-10 sm:h-10 stroke-[1.5]" />
           </div>
         ) : (
-          <img
-            src={category.image_url || "/placeholder.jpg"}
-            alt={category.name}
-            className="w-full h-full object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-500"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={category.image_url || "/placeholder.jpg"}
+              alt={category.name}
+              fill
+              sizes="(max-width: 640px) 120px, 160px"
+              loading="lazy"
+              className="object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-500"
+            />
+          </div>
         )}
       </div>
 

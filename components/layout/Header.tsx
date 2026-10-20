@@ -333,10 +333,12 @@ export default function Header() {
                   items.map((item) => (
                     <div key={item.id} className="flex gap-4 p-3 bg-white rounded-xl border border-[#EAE0D5] shadow-xs">
                       <div className="w-20 h-20 bg-[#EAE0D5]/40 rounded-lg overflow-hidden shrink-0 relative">
-                        <img
+                        <Image
                           src={item.product.primary_image || "/placeholder.jpg"}
                           alt={item.product.name}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="80px"
+                          className="object-cover"
                         />
                       </div>
                       <div className="flex-1 flex flex-col justify-between">

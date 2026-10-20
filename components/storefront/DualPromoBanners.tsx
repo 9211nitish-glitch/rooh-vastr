@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function DualPromoBanners() {
@@ -48,12 +49,15 @@ export default function DualPromoBanners() {
             {/* Right Graphic: T-Shirt Mockup */}
             <div className="absolute right-3 sm:right-6 bottom-3 top-3 w-40 sm:w-48 flex items-center justify-center pointer-events-none">
               <div className="relative w-full aspect-square bg-[#FAF7F2] rounded-2xl p-2.5 shadow-md border border-white/10 rotate-3 group-hover:rotate-0 transition-transform duration-500 overflow-hidden flex items-center justify-center">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80"
                   alt="Custom Print Mockup"
-                  className="w-full h-full object-cover rounded-xl"
+                  fill
+                  sizes="(max-width: 640px) 160px, 200px"
+                  loading="lazy"
+                  className="object-cover rounded-xl"
                 />
-                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-2 rounded-xl">
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-2 rounded-xl z-10">
                   <span className="text-[11px] font-black tracking-widest text-white uppercase border-2 border-dashed border-white/80 px-2 py-1 rounded">
                     YOUR DESIGN<br />HERE
                   </span>
@@ -89,12 +93,15 @@ export default function DualPromoBanners() {
             {/* Right Graphic: Corporate merchandise set */}
             <div className="absolute right-3 sm:right-6 bottom-3 top-3 w-40 sm:w-48 flex items-center justify-center pointer-events-none">
               <div className="relative w-full aspect-square bg-[#FAF7F2] rounded-2xl p-2.5 shadow-md border border-white/10 -rotate-3 group-hover:rotate-0 transition-transform duration-500 overflow-hidden flex items-center justify-center">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=400&q=80"
                   alt="Corporate Merchandise Kit"
-                  className="w-full h-full object-cover rounded-xl"
+                  fill
+                  sizes="(max-width: 640px) 160px, 200px"
+                  loading="lazy"
+                  className="object-cover rounded-xl"
                 />
-                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-2 rounded-xl">
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-2 rounded-xl z-10">
                   <span className="text-[10px] font-black tracking-widest text-white uppercase border-2 border-dashed border-white/80 px-2 py-1 rounded">
                     YOUR LOGO<br />HERE
                   </span>

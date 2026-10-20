@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight, Gem, Heart, Truck, Sparkles } from "lucide-react";
 
 export default function HeroBanner() {
@@ -111,14 +112,15 @@ export default function HeroBanner() {
                   {/* Big T-Shirt & Box Card */}
                   <div className="col-span-7 space-y-3">
                     <div className="aspect-4/5 rounded-2xl overflow-hidden bg-[#F5EFEB] relative group">
-                      <img
+                      <Image
                         src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
                         alt="Good Things Take Time Custom T-Shirt"
-                        fetchPriority="high"
-                        decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 70vw, 420px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-xs rounded-xl p-2.5 text-center shadow-xs">
+                      <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-xs rounded-xl p-2.5 text-center shadow-xs z-10">
                         <span className="text-[10px] uppercase tracking-wider font-bold text-[#6D1835]">
                           Signature Apparel
                         </span>
@@ -127,11 +129,16 @@ export default function HeroBanner() {
                     </div>
 
                     <div className="rounded-2xl overflow-hidden bg-[#FAF7F2] border border-[#E8DFD8] p-3 flex items-center gap-3">
-                      <img
-                        src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80"
-                        alt="Better Together Keychain"
-                        className="w-12 h-12 rounded-xl object-cover shrink-0"
-                      />
+                      <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0">
+                        <Image
+                          src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80"
+                          alt="Better Together Keychain"
+                          fill
+                          sizes="48px"
+                          loading="lazy"
+                          className="object-cover"
+                        />
+                      </div>
                       <div>
                         <span className="text-xs font-bold text-[#2D2424] block">Wooden Keychain Pair</span>
                         <span className="text-[10px] text-stone-700 font-medium">Better Together ♡</span>
@@ -142,32 +149,41 @@ export default function HeroBanner() {
                   {/* Mug, Cushion & Frame Column */}
                   <div className="col-span-5 space-y-3">
                     <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] relative group border border-[#E8DFD8]">
-                      <img
+                      <Image
                         src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
                         alt="Personalized Photo Mug"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 40vw, 240px"
+                        loading="lazy"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-2 right-2 bg-[#6D1835] text-white text-[9px] font-bold px-2 py-0.5 rounded-full">
+                      <div className="absolute top-2 right-2 bg-[#6D1835] text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
                         Hot
                       </div>
                     </div>
 
                     <div className="aspect-square rounded-2xl overflow-hidden bg-[#FAF7F2] relative group border border-[#E8DFD8]">
-                      <img
+                      <Image
                         src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80"
                         alt="Personalized Cushion"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 40vw, 240px"
+                        loading="lazy"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-2.5 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-2.5 text-white z-10">
                         <span className="text-[10px] font-medium leading-tight">Home is wherever you are ♡</span>
                       </div>
                     </div>
 
                     <div className="aspect-4/3 rounded-2xl overflow-hidden bg-[#FAF7F2] relative group border border-[#E8DFD8]">
-                      <img
+                      <Image
                         src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80"
                         alt="Couple Photo Frame"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 40vw, 240px"
+                        loading="lazy"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </div>

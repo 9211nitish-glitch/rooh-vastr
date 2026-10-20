@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Sparkles,
   MessageSquare,
@@ -467,10 +468,13 @@ export default function AIChatbotWidget() {
                         >
                           <div className="relative w-full h-24 bg-stone-100 overflow-hidden">
                             {prod.primary_image ? (
-                              <img
+                              <Image
                                 src={prod.primary_image}
                                 alt={prod.name}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                fill
+                                sizes="160px"
+                                loading="lazy"
+                                className="object-cover group-hover:scale-105 transition-transform duration-300"
                               />
                             ) : (
                               <div className="w-full h-full flex items-center justify-center bg-stone-200 text-stone-400">
