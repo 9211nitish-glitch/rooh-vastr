@@ -46,7 +46,16 @@ const SIGNOFFS = [
   "Happy gifting!\nRooh Vastr Studio ✨",
 ];
 
+import { isAuthorizedAdmin } from "@/lib/auth/admin-auth";
+
 export async function POST(req: NextRequest) {
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json(
+      { success: false, error: "Unauthorized: Admin authorization required." },
+      { status: 401 }
+    );
+  }
+
   try {
     const body = await req.json();
     const {

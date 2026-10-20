@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next';
-import { initialProducts, initialCategories } from '@/lib/data/store-data';
+import { initialProducts } from '@/lib/data/store-data';
+import { DEFAULT_STOREFRONT_ARTICLES } from '@/lib/data/articles-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://roohvastr.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://roohvastr.vercel.app';
 
-  // Core static pages
+  // Core indexable static pages (utility pages like /cart, /track-order excluded for SEO quality)
   const staticPages = [
     '',
     '/shop',
@@ -14,8 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/contact',
     '/faq',
-    '/track-order',
-    '/cart',
     '/shipping-policy',
     '/returns-refunds',
     '/privacy-policy',
@@ -35,27 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Category filter routes
-  const categoryPages = initialCategories.map((category) => ({
-    url: `${baseUrl}/shop?category=${category.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.75,
-  }));
-
-  // Initial blog articles
-  const blogSlugs = [
-    'ultimate-personalized-gift-guide-india',
-    'how-to-choose-the-perfect-custom-tshirt-gsm-fabric-guide',
-    'corporate-gifting-trends-that-leave-lasting-impressions',
-  ];
-
-  const blogPages = blogSlugs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date().toISOString(),
+  // Dynamic blog articles from canonical storefront articles data
+  const blogPages = DEFAULT_STOREFRONT_ARTICLES.map((article) => ({
+    url: `${baseUrl}/blog/${article.slug}`,
+    lastModified: article.created_at || new Date().toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 0.65,
   }));
 
-  return [...staticPages, ...categoryPages, ...productPages, ...blogPages];
+  return [...staticPages, ...productPages, ...blogPages];
 }
+

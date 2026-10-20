@@ -24,8 +24,10 @@ export const viewport: Viewport = {
   themeColor: "#4F1026",
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://roohvastr.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://roohvastr.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
   description: "India's boutique emotional gifting & premium apparel brand. Discover ready-to-wear luxury collections and customized personalized print-on-demand gifts crafted with soul.",
   keywords: ["custom apparel india", "personalized gifts", "custom t-shirts", "custom mugs", "hoodies customized", "emotional gifting", "rooh vastr"],
@@ -49,16 +51,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
-    description: "Premium apparel & emotional personalized gifting platform with bespoke print craft.",
+    description: "India's boutique emotional gifting & premium customized apparel brand. Discover handcrafted gifts made with soul.",
+    url: siteUrl,
     type: "website",
     locale: "en_IN",
     siteName: "ROOH VASTR",
     images: [
       {
-        url: "/images/brand/logo.jpg",
-        width: 1024,
-        height: 1024,
-        alt: "ROOH VASTR Brand Logo",
+        url: "/images/brand/og-share-1200x630.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "ROOH VASTR - Wear Your Story. Gift Your Feelings.",
+      },
+      {
+        url: "/images/brand/whatsapp-preview-square.jpg",
+        width: 600,
+        height: 600,
+        type: "image/jpeg",
+        alt: "ROOH VASTR Boutique Gifting",
       },
     ],
   },
@@ -66,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
     description: "India's boutique emotional gifting & premium apparel brand.",
-    images: ["/images/brand/logo.jpg"],
+    images: ["/images/brand/og-share-1200x630.jpg"],
   },
 };
 
@@ -75,8 +86,8 @@ const organizationSchema = {
   "@type": "Organization",
   name: "ROOH VASTR",
   alternateName: "Rooh Vastr",
-  url: "https://roohvastr.vercel.app",
-  logo: "https://roohvastr.vercel.app/images/brand/logo.jpg",
+  url: siteUrl,
+  logo: `${siteUrl}/images/brand/og-share-1200x630.jpg`,
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+919654861504",
@@ -90,7 +101,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "ROOH VASTR",
-  url: "https://roohvastr.vercel.app",
+  url: siteUrl,
 };
 
 export default function RootLayout({

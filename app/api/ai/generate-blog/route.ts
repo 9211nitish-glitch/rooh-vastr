@@ -27,11 +27,38 @@ const STOCK_EDITORIAL_IMAGES = [
   "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80",
 ];
 
+import { isAuthorizedAdmin } from "@/lib/auth/admin-auth";
+
+// Simple in-memory rate limiting: max 10 requests per 10-minute window
+let requestTimestamps: number[] = [];
+
 export async function POST(req: Request) {
+  // 1. Staff Authorization Guard (eliminates public abuse and API quota drain)
+  if (!isAuthorizedAdmin(req)) {
+    return NextResponse.json(
+      { success: false, error: "Unauthorized: Staff authentication required to invoke AI blog generation." },
+      { status: 401 }
+    );
+  }
+
+  // 2. Rate Limiting Check
+  const now = Date.now();
+  requestTimestamps = requestTimestamps.filter((t) => now - t < 10 * 60 * 1000);
+  if (requestTimestamps.length >= 10) {
+    return NextResponse.json(
+      { success: false, error: "Too many AI generation requests. Please wait a few minutes." },
+      { status: 429 }
+    );
+  }
+  requestTimestamps.push(now);
+
   try {
     const body = await req.json().catch(() => ({}));
-    const count = body.count || 4;
-    const focusTheme = body.theme || "Personalized Gifting, Custom Apparel & Meaningful Celebrations in India";
+    // 3. Clamped count (max 3 drafts per invocation)
+    const count = Math.min(Math.max(Number(body.count) || 2, 1), 3);
+    const focusTheme = String(body.theme || "Personalized Gifting, Custom Apparel & Meaningful Celebrations in India")
+      .trim()
+      .slice(0, 200);
 
     if (!geminiClient || !apiKey) {
       // Fallback realistic drafts if API key is not configured or in sandbox
