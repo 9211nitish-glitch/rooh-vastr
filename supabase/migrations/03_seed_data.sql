@@ -22,7 +22,7 @@ INSERT INTO public.products (
 )
 VALUES
 (
-    'p1000000-0000-0000-0000-000000000001',
+    'b1000000-0000-0000-0000-000000000001',
     'Customized Pure Cotton Minimalist Graphic Tee',
     'customized-pure-cotton-graphic-tee',
     'RV-TSH-001',
@@ -32,7 +32,7 @@ VALUES
     999.00, 749.00, 'ready_made', '100% Bio-Washed Combed Cotton', 'S to 3XL Standard Fit', 220, true, true, true, true, true
 ),
 (
-    'p1000000-0000-0000-0000-000000000002',
+    'b1000000-0000-0000-0000-000000000002',
     'Personalized Ceramic Keepsake Coffee Mug',
     'personalized-ceramic-coffee-mug',
     'RV-MUG-001',
@@ -42,7 +42,7 @@ VALUES
     499.00, 349.00, 'ready_made', 'A-Grade Ceramic', '350ml / 11oz', 330, true, true, true, true, true
 ),
 (
-    'p1000000-0000-0000-0000-000000000003',
+    'b1000000-0000-0000-0000-000000000003',
     'Heritage Heavyweight Fleece Custom Hoodie',
     'heritage-heavyweight-fleece-hoodie',
     'RV-HOD-001',
@@ -52,7 +52,7 @@ VALUES
     2199.00, 1699.00, 'ready_made', 'Brushed Cotton Fleece (380 GSM)', 'Regular Unisex Fit', 650, true, true, true, true, true
 ),
 (
-    'p1000000-0000-0000-0000-000000000004',
+    'b1000000-0000-0000-0000-000000000004',
     'Custom Satin Photo Cushion with Microfiber Insert',
     'custom-satin-photo-cushion',
     'RV-CSH-001',
@@ -62,7 +62,7 @@ VALUES
     699.00, 499.00, 'ready_made', 'Silk Satin Blend with Microfiber Filling', '16 x 16 inches', 400, true, false, true, true, true
 ),
 (
-    'p1000000-0000-0000-0000-000000000005',
+    'b1000000-0000-0000-0000-000000000005',
     'Floating Acrylic Glass Memory Frame',
     'floating-acrylic-glass-frame',
     'RV-FRM-001',
@@ -72,7 +72,7 @@ VALUES
     1299.00, 899.00, 'ready_made', 'Cast Optical Acrylic', '8 x 10 inches, 6mm thickness', 500, true, true, true, true, true
 ),
 (
-    'p1000000-0000-0000-0000-000000000006',
+    'b1000000-0000-0000-0000-000000000006',
     'Insulated Vacuum Stainless Steel Personalized Flask',
     'insulated-vacuum-steel-flask',
     'RV-BTL-001',
@@ -86,12 +86,12 @@ ON CONFLICT (id) DO NOTHING;
 -- 3. PRODUCT IMAGES
 INSERT INTO public.product_images (product_id, image_url, alt_text, display_order, is_primary)
 VALUES
-('p1000000-0000-0000-0000-000000000001', 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80', 'Customized White Cotton T-shirt', 1, true),
-('p1000000-0000-0000-0000-000000000002', 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80', 'Personalized Ceramic Coffee Mug', 1, true),
-('p1000000-0000-0000-0000-000000000003', 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80', 'Burgundy Comfort Hoodie', 1, true),
-('p1000000-0000-0000-0000-000000000004', 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80', 'Custom Satin Photo Cushion', 1, true),
-('p1000000-0000-0000-0000-000000000005', 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80', 'Crystal Acrylic Floating Photo Block', 1, true),
-('p1000000-0000-0000-0000-000000000006', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80', 'Engraved Matte Black Water Bottle', 1, true)
+('b1000000-0000-0000-0000-000000000001', 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80', 'Customized White Cotton T-shirt', 1, true),
+('b1000000-0000-0000-0000-000000000002', 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80', 'Personalized Ceramic Coffee Mug', 1, true),
+('b1000000-0000-0000-0000-000000000003', 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80', 'Burgundy Comfort Hoodie', 1, true),
+('b1000000-0000-0000-0000-000000000004', 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80', 'Custom Satin Photo Cushion', 1, true),
+('b1000000-0000-0000-0000-000000000005', 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80', 'Crystal Acrylic Floating Photo Block', 1, true),
+('b1000000-0000-0000-0000-000000000006', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80', 'Engraved Matte Black Water Bottle', 1, true)
 ON CONFLICT (id) DO NOTHING;
 
 -- 4. HOMEPAGE SECTIONS
