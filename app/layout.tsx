@@ -29,13 +29,68 @@ export const metadata: Metadata = {
   title: "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
   description: "India's boutique emotional gifting & premium apparel brand. Discover ready-to-wear luxury collections and customized personalized print-on-demand gifts crafted with soul.",
   keywords: ["custom apparel india", "personalized gifts", "custom t-shirts", "custom mugs", "hoodies customized", "emotional gifting", "rooh vastr"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/web-app-manifest-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: "ROOH VASTR",
+    statusBarStyle: "default",
+    capable: true,
+  },
   openGraph: {
     title: "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
     description: "Premium apparel & emotional personalized gifting platform with bespoke print craft.",
     type: "website",
     locale: "en_IN",
     siteName: "ROOH VASTR",
+    images: [
+      {
+        url: "/images/brand/logo.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "ROOH VASTR Brand Logo",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
+    description: "India's boutique emotional gifting & premium apparel brand.",
+    images: ["/images/brand/logo.jpg"],
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ROOH VASTR",
+  alternateName: "Rooh Vastr",
+  url: "https://roohvastr.vercel.app",
+  logo: "https://roohvastr.vercel.app/images/brand/logo.jpg",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+919654861504",
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: ["en", "hi"],
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ROOH VASTR",
+  url: "https://roohvastr.vercel.app",
 };
 
 export default function RootLayout({
@@ -53,6 +108,14 @@ export default function RootLayout({
           as="image"
           href="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
           fetchPriority="high"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#FAF7F2] text-[#242124] selection:bg-[#C98F9F]/30 selection:text-[#4F1026] overflow-x-hidden">

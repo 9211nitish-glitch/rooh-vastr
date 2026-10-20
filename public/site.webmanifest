@@ -1,0 +1,23 @@
+{
+  "name": "ROOH VASTR | Wear Your Story. Gift Your Feelings.",
+  "short_name": "ROOH VASTR",
+  "description": "India's boutique emotional gifting & premium apparel brand.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "theme_color": "#4F1026",
+  "background_color": "#FAF7F2",
+  "display": "standalone",
+  "start_url": "/"
+}
